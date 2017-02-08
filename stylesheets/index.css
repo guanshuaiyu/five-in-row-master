@@ -1,0 +1,253 @@
+body{
+    margin:0;
+    font-family:"Helevtica";
+    background-image:radial-gradient(#999,#fff);
+    overflow:hidden;
+}
+#tips{
+    position:absolute;
+    z-index:999999;
+    top:0;
+    left:0;
+    /* margin-left:-150px; */
+    width:100%;
+    height:40px;
+    line-height:40px;
+    background:rgba(0,0,0,0.7);
+    box-shadow:0 0 20px black;
+    color:white;
+    text-align:center;
+    display:none;
+}
+#alerts{
+    display:inline-block;
+    cursor:default;
+    font-size:20px;
+    padding:0 90px;
+}
+#restart{
+    cursor:pointer;
+    display:inline-block;
+    border:1px solid white;
+    line-height:27px;
+    padding:0px 20px;
+    font-size:13px;
+}
+
+/*---------------*/
+#sence{
+    width:600px;
+    height:600px;
+    margin:0 auto;
+    background-color:rgba(255,255,255,0.5);
+    border-right:none;
+    border-bottom:none;
+    position:absolute;
+    box-shadow:0 0 12px black;
+    top:10px;
+    left:50%;
+    margin-left:-300px;
+    -webkit-transition:all .3s ease;
+}
+
+/*---------------*/
+.block{
+    width:30px;
+    height:30px;
+    float:left;
+    margin:5px;
+    border-radius:50%;
+    position:relative;
+    z-index:1;
+}
+/*------------------------*/
+.black{
+    background:black;
+    /* background-image:radial-gradient(#555,#000); */
+    /* box-shadow:0 1px 3px black; */
+}
+.white{
+    background:white;
+    background-image:radial-gradient(#fff,#fff);
+    /* box-shadow:0 1px 3px black; */
+}
+.current{
+    border:2px solid rgb(255, 129, 46);
+    width:26px;
+    height:26px;
+    box-shadow:none;
+}
+
+
+/*-----------------------------*/
+.row,.col{
+    position:absolute;
+}
+.row{
+    border-bottom:1px solid black;
+    width:560px;
+    height:0;
+    left:20px;
+}
+.col{
+    border-right:1px solid black;
+    width:0;
+    height:560px;
+    top:20px;
+}
+
+/*------------------------------*/
+.star{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:black;
+    position:absolute;
+}
+.star1{
+    top:137px;
+    left:137px;
+}
+.star2{
+    top:137px;
+    right:137px;
+}
+.star3{
+    bottom:137px;
+    left:137px;
+}
+.star4{
+    bottom:137px;
+    right:137px;
+}
+.star5{
+    top:298px;
+    left:298px;
+}
+
+/*------------------------------*/
+.image-show-grid{
+    margin:0;
+    position: relative;
+    width: 2048px;
+    height: 682px
+}
+.image-show-grid::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 19920px 720px;
+    height: 720px;
+    width: 19920px;
+    background-image: url("../images/river.jpg");
+    -webkit-animation-duration: 500s;
+    animation-duration: 500s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.image-show-grid.fog-active::before{
+    -webkit-animation-name: showGridAnimationAfterLarge;
+    animation-name: showGridAnimationAfterLarge;
+}
+
+.image-show-grid::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 19860px 626px;
+    height: 626px;
+    width: 19860px;
+    background-image: url("../images/river.jpg");
+    -webkit-animation-duration: 500s;
+    animation-duration: 500s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.image-show-grid.fog-active::after{
+    -webkit-animation-name: showGridAnimationBeforeLarge;
+    animation-name: showGridAnimationBeforeLarge;
+}
+
+@-webkit-keyframes showGridAnimationAfterLarge {
+    0% {
+	-webkit-transform: translate3d(19860px, 0, 0);
+	transform: translate3d(19860px, 0, 0)
+    }
+
+    50% {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+    }
+
+    100% {
+	-webkit-transform: translate3d(-19860px, 0, 0);
+	transform: translate3d(-19860px, 0, 0)
+    }
+}
+
+@keyframes showGridAnimationAfterLarge {
+    0% {
+	-webkit-transform: translate3d(19860px, 0, 0);
+	transform: translate3d(19860px, 0, 0)
+    }
+
+    50% {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+    }
+
+    100% {
+	-webkit-transform: translate3d(-19860px, 0, 0);
+	transform: translate3d(-19860px, 0, 0)
+    }
+}
+
+@-webkit-keyframes showGridAnimationBeforeLarge {
+    0% {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+    }
+
+    50% {
+	-webkit-transform: translate3d(-19860px, 0, 0);
+	transform: translate3d(-19860px, 0, 0)
+    }
+
+    50.001% {
+	-webkit-transform: translate3d(19860px, 0, 0);
+	transform: translate3d(19860px, 0, 0)
+    }
+
+    100% {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+    }
+}
+
+@keyframes showGridAnimationBeforeLarge {
+    0% {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+    }
+
+    50% {
+	-webkit-transform: translate3d(-19860px, 0, 0);
+	transform: translate3d(-19860px, 0, 0)
+    }
+
+    50.001% {
+	-webkit-transform: translate3d(19860px, 0, 0);
+	transform: translate3d(19860px, 0, 0)
+    }
+
+    100% {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+    }
+}
